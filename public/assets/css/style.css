@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Philosopher", sans-serif;
+}
+
+.corpo {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.barralateral {
+  position: fixed;
+  background-color: #007a87;
+  width: 30%;
+  height: 100%;
+}
+
+.principal {
+  position: relative;
+  float: right;
+  width: 70%;
+  height: 100vh;
+  margin-top: 22%;
+}
+
+section.principal h1 {
+  margin-left: 30%;
+}
