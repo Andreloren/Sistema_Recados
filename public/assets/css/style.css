@@ -27,7 +27,7 @@
   float: right;
   width: 65%;
   height: 100vh;
-  margin-top: 22%;
+  margin-top: 20%;
 }
 
 .principal button.botao1 {
@@ -69,10 +69,28 @@
 }
 
 section.principal h2 {
-  margin-left: 293px;
+  font-size: 20px;
+  margin-left: 327px;
   color: #007a87;
 }
 section.principal h3 {
   margin-left: 477px;
   color: #007a87;
+}
+#nomeUsuario {
+  margin-left: 298px;
+}
+
+#nomeUsuario,
+#senhaUsuario {
+  position: relative;
+  border-color: rgb(214, 209, 209);
+  padding: 8px;
+  margin-top: 32px;
+  margin-bottom: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 5px;
 }
