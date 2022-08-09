@@ -18,7 +18,38 @@
     <main>
       <section class="principal">
         <h3>CRIAR CONTA</h3>
-        <button class="botao2">CRIAR CONTA NOVA</button>
+        <form action="">
+          <div>
+            <label for="dadosCadastrais">
+              <input
+                type="text"
+                name="dadosCadastrais"
+                id="novoNomeUsuario"
+                placeholder="E-MAIL"
+                required
+              />
+              <br />
+              <input
+                type="password"
+                name="dadosCadastrais"
+                id="novoSenhaUsuario"
+                placeholder="SENHA"
+                required
+              />
+              <br />
+              <input
+                type="password"
+                name="dadosCadastrais"
+                id="novoSenhaUsuarioRepeat"
+                placeholder="CONFIRME SUA SENHA"
+                required
+              />
+            </label>
+          </div>
+        </form>
+        <button onclick="retornaLogin()" class="botao2">
+          CRIAR CONTA NOVA
+        </button>
       </section>
     </main>
     <script src="assets/js/index.js"></script>
