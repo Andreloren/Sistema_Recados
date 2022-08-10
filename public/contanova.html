@@ -18,35 +18,46 @@
     <main>
       <section class="principal">
         <h3>CRIAR CONTA</h3>
-        <form id="formulario">
+        <form id="formulario" name="formulario">
           <div>
-            <label for="dadosCadastrais">
+            <label for="emailCadastrado">
               <input
                 type="email"
-                name="dadosCadastrais"
-                id="novoNomeUsuario"
+                name="emailCadastrado"
+                id="emailCadastrado"
                 placeholder="E-MAIL"
                 required
               />
-              <br />
+            </label>
+            <br />
+            <label for="novoSenhaUsuario">
               <input
                 type="password"
-                name="dadosCadastrais"
+                name="novoSenhaUsuario"
                 id="novoSenhaUsuario"
                 placeholder="SENHA"
+                minlength="5"
+                maxlength="8"
                 required
               />
-              <br />
+            </label>
+            <br />
+            <label for="novoSenhaUsuarioRepeat">
               <input
                 type="password"
-                name="dadosCadastrais"
+                name="novoSenhaUsuarioRepeat"
                 id="novoSenhaUsuarioRepeat"
                 placeholder="CONFIRME SUA SENHA"
                 required
               />
             </label>
           </div>
-          <input id="salvar" type="submit" value="SALVAR DADOS DA CONTA" />
+          <input
+            id="salvar"
+            type="submit"
+            onclick=" return cadastroSenha( );"
+            value="CONFIRMAR CRIAÇÃO DA CONTA"
+          />
         </form>
       </section>
     </main>

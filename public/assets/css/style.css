@@ -50,8 +50,8 @@
   color: white;
   border-style: none;
   background-color: #007a87;
-  padding-left: 155px;
-  padding-right: 155px;
+  padding-left: 145px;
+  padding-right: 145px;
   padding-bottom: 10px;
   padding-top: 10px;
   margin-top: 30px;
@@ -78,14 +78,15 @@ section.principal h3 {
   margin-left: 477px;
   color: #007a87;
 }
-#nomeUsuario {
+#emailUsuario,
+#emailCadastrado {
   margin-left: 298px;
 }
 
-#nomeUsuario,
+#emailUsuario,
 #senhaUsuario,
 #novoSenhaUsuario,
-#novoNomeUsuario,
+#emailCadastrado,
 #novoSenhaUsuarioRepeat {
   position: relative;
   border-color: rgb(214, 209, 209);
@@ -101,7 +102,8 @@ section.principal h3 {
 
 #novoSenhaUsuario,
 #novoNomeUsuario,
-#novoSenhaUsuarioRepeat {
+#novoSenhaUsuarioRepeat,
+#emailCadastrado {
   margin-left: 300px;
   padding-right: 80px;
 }
