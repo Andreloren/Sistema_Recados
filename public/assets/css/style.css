@@ -50,23 +50,8 @@
   color: white;
   border-style: none;
   background-color: #007a87;
-  padding-left: 152px;
-  padding-right: 152px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  margin-top: 30px;
-  margin-left: 298px;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-.principal button.botao2 {
-  border-radius: 5px;
-  color: white;
-  border-style: none;
-  background-color: #007a87;
-  padding-left: 182px;
-  padding-right: 182px;
+  padding-left: 155px;
+  padding-right: 155px;
   padding-bottom: 10px;
   padding-top: 10px;
   margin-top: 30px;
