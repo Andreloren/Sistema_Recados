@@ -16,6 +16,7 @@
       />
     </aside>
     <main>
+      <p id="msgSucesso"></p>
       <section class="principal">
         <h3>CRIAR CONTA</h3>
         <form id="formulario" name="formulario">
@@ -37,8 +38,6 @@
                 name="novoSenhaUsuario"
                 id="novoSenhaUsuario"
                 placeholder="SENHA"
-                minlength="5"
-                maxlength="8"
                 required
               />
             </label>
@@ -57,12 +56,13 @@
           <input
             id="salvar"
             type="submit"
-            onclick=" return validarSenha();"
+            onclick="cadastrarUsuarios();"
             value="CONFIRMAR CRIAÇÃO DA CONTA"
           />
         </form>
       </section>
     </main>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/usuarioLocalStorage.js"></script>
+    <script src="assets/js/contaNova.js"></script>
   </body>
 </html>
