@@ -6,9 +6,9 @@ let confirmacaoSenhaHTML = document.getElementById("novoSenhaUsuarioRepeat");
 function cadastrarUsuarios() {
   let usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
-  let email = formulario.emailCadastrado.value;
-  let senha = formulario.novoSenhaUsuario.value;
-  let repSenha = formulario.novoSenhaUsuarioRepeat.value;
+  let email = emailHTML.value;
+  let senha = senhaCadastradaHTML.value;
+  let repSenha = confirmacaoSenhaHTML.value;
 
   if (!senha || !repSenha) {
     mensagemAlert("atencao", "Campos Vazios");
