@@ -3,15 +3,12 @@ let emailHTML = document.getElementById("emailCadastrado");
 let senhaCadastradaHTML = document.getElementById("novoSenhaUsuario");
 let confirmacaoSenhaHTML = document.getElementById("novoSenhaUsuarioRepeat");
 
-function cadastroSenha() {
+function validarSenha() {
   let senha = formulario.novoSenhaUsuario.value;
   let repSenha = formulario.novoSenhaUsuarioRepeat.value;
 
-  /*if (senha < 6 && repSenha < 6) {
-    alert("Digite uma senha de no mínimo 5 caracteres");
-  } else if (confirmacaoSenhaHTML.value === senhaCadastradaHTML.value) {
+  if (repSenha === senha) {
     confirmacaoSenhaHTML.setCustomValidity("");
-    alert("Conta Cadastrada com Sucesso");
   } else {
     confirmacaoSenhaHTML.setCustomValidity("As senhas não conferem");
   }
@@ -19,9 +16,9 @@ function cadastroSenha() {
 
 formularioHTML.addEventListener("submit", (evento) => {
   evento.preventDefault();
-
+  alert("Cadastro Realizado com sucesso");
   console.log(emailHTML.value);
   console.log(senhaCadastradaHTML.value);
   console.log(confirmacaoSenhaHTML.value);
-  /*window.location.href = "index.html";*/
+  window.location.href = "index.html";
 });
