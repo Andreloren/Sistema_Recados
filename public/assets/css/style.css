@@ -23,7 +23,8 @@
   height: 100%;
 }
 
-#msgSucesso {
+#msgSucesso,
+#msgSucesso2 {
   display: none;
   position: fixed;
   top: 1rem;
