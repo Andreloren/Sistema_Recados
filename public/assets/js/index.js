@@ -18,12 +18,11 @@ function logarUsuario() {
     return;
   }
 
-  let validarUsuario = usuarioLogin.find(
+  const validarUsuario = usuarioLogin.find(
     (usuarioValidacao) =>
       usuarioValidacao.senha === senhaValidacao &&
       usuarioValidacao.email === emailValidacao
   );
-  console.log(validarUsuario);
 
   if (validarUsuario === undefined) {
     alert("Usuário ou senha inexistente.");
@@ -31,7 +30,8 @@ function logarUsuario() {
     return;
   }
 
-  let usuarioLogado = validarUsuario;
+  const usuarioLogado = validarUsuario;
+  console.log(usuarioLogado);
 
   localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
 }
