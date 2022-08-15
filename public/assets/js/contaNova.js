@@ -24,6 +24,15 @@ function cadastrarUsuarios() {
     mensagemAlert("atencao", "Digite uma senha de no mínimo 5 caracteres");
     return;
   }
+
+  let existe = usuarios.some((valor) => valor.email === email);
+
+  if (existe) {
+    alert("Já existe esse CPF cadastrado.");
+    resetCadastro();
+    return;
+  }
+
   const identificador = Math.floor(Math.random() * (1000 - 10) + 10);
 
   const criarUsuario = {
