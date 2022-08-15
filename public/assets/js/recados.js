@@ -1,5 +1,17 @@
 let usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
-console.log(usuario);
+
+let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+/*function salvarDadosStorage(dados){
+    localStorage.setItem('usuarios', JSON.stringify(dados))
+}
+
+
+function buscarDadosStorage(){
+    let dadosString = localStorage.getItem('cadastros') || []
+    let dadosTransformados = JSON.parse(dadosString)
+    
+    return dadosTransformados  // pode ser assim =>  JSON.parse(localStorage.getItem('cadastros'))
+}*/
 
 if (!usuario) {
   sair();
@@ -15,32 +27,26 @@ botaoSair.addEventListener("click", () => {
 function sair() {
   return (window.location.href = "index.html");
 }
+// Ate aqui está pronto
+
 let botaoSalvar = document.getElementById("salvar");
 
-let emailUsuario = document.getElementById("userEmail");
-emailUsuario.innerHTML = usuario.email;
+botaoSalvar.addEventListener("click", cadastrarMensagens);
 
-let descricaoHTML = document.getElementById("descricao");
-let detalhamentoHTML = document.getElementById("detalhamento");
+function cadastrarMensagens() {
+  let descricaoHTML = document.getElementById("descricao");
+  let detalhamentoHTML = document.getElementById("detalhamento");
 
-botaoSalvar.addEventListener("click", salvarMensagens);
+  let mensagemHTML = [
+    {
+      Descrição: descricaoHTML.value,
+      Detalhamento: detalhamentoHTML.value,
+    },
+  ];
 
-function salvarMensagens() {
-  let insereRecado = {
-    email: usuario.email,
-    identificador: usuario.identificador,
-    mensagens: [
-      {
-        descricao: descricaoHTML.value,
-        detalhamento: detalhamentoHTML.value,
-      },
-    ],
-    senha: usuario.senha,
-  };
+  console.log(mensagemHTML);
 
-  console.log(descricaoHTML);
-  console.log(detalhamentoHTML);
-  console.log(insereRecado);
-
-  localStorage.setItem("usuarios", JSON.stringify(insereRecado));
+  console.log(usuario.mensagens);
+  console.log(usuarios);
+  console.log(usuario);
 }
