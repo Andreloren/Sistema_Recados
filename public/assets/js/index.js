@@ -18,7 +18,7 @@ function logarUsuario() {
     return;
   }
 
-  const validarUsuario = usuarioLogin.find(
+  let validarUsuario = usuarioLogin.find(
     (usuarioValidacao) =>
       usuarioValidacao.senha === senhaValidacao &&
       usuarioValidacao.email === emailValidacao
@@ -39,6 +39,7 @@ function logarUsuario() {
     login();
     resetLogin();
   }
+
   console.log(validarUsuario);
   const usuarioLogado = validarUsuario;
   console.log(usuarioLogado);
