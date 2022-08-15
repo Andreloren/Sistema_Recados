@@ -33,6 +33,33 @@
   z-index: 9999;
 }
 
+#logout {
+  position: absolute;
+  margin-left: 1150px;
+  margin-top: -44px;
+  border: none;
+  background-color: red;
+  color: white;
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#save {
+  position: absolute;
+  margin-left: 1070px;
+  margin-top: -44px;
+  background-color: #007a87;
+  cursor: pointer;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+}
+
 .principal div.botao2 {
   margin-top: 5px;
 }
@@ -83,6 +110,21 @@
   font-size: 13px;
 }
 
+section.recados h1 {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 7%;
+  margin-left: 40%;
+  color: #007a87;
+}
+
+#legenda {
+  color: #007a87;
+  position: relative;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
 section.principal h2 {
   font-size: 20px;
   margin-left: 329px;
@@ -121,4 +163,18 @@ section.principal h3 {
 #emailCadastrado {
   margin-left: 300px;
   padding-right: 80px;
+}
+#descricao,
+#detalhamento {
+  position: relative;
+  border-color: rgb(214, 209, 209);
+  padding: 8px;
+  margin-left: 30px;
+  margin-top: 32px;
+  margin-bottom: 5px;
+  padding-left: 300px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 5px;
 }
