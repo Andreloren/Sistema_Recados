@@ -7,7 +7,25 @@
     <title>Sistema de Recados</title>
   </head>
   <body>
-    <h1>Painel de Recados</h1>
+    <h1>PAINEL DE RECADOS</h1>
+    <div>
+    <form >
+      <legend>Meus Recados</legend>
+      <label for="descricao"
+        ><input type="text" name="descrição" id="descricao" />
+      </label>
+      <label for="detalhamento"
+        ><input type="text" name="detalhamento" id="detalhamento"
+      /></label>
+    </div>
+    <div>
+      <input type="submit" value="Salvar" />
+    </div>
+    </form>
+    <div>
+    <button id="logout">Sair</button>
+    </div>
+    <script src="assets/js/usuarioLocalStorage.js"></script>
     <script src="assets/js/recados.js"></script>
   </body>
 </html>

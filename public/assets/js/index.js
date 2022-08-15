@@ -36,8 +36,8 @@ function logarUsuario() {
       resetLogin();
     }
   } else {
-    resetLogin();
     login();
+    resetLogin();
   }
   console.log(validarUsuario);
   const usuarioLogado = validarUsuario;
@@ -56,5 +56,8 @@ function retornaCadastro() {
 }
 
 function login() {
+  setTimeout(() => {
+    alert("Login Efetuado com Sucesso");
+  }, 1500);
   window.location.href = "recados.html";
 }
