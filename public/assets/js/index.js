@@ -25,11 +25,21 @@ function logarUsuario() {
   );
 
   if (validarUsuario === undefined) {
-    alert("Usuário ou senha inexistente.");
-    resetLogin();
-    return;
-  }
+    let retorno = confirm(
+      "Usuário ou senha inexistente. Deseja realizar cadastro?"
+    );
 
+    if (retorno === true) {
+      resetLogin();
+      retornaCadastro();
+    } else {
+      resetLogin();
+    }
+  } else {
+    resetLogin();
+    login();
+  }
+  console.log(validarUsuario);
   const usuarioLogado = validarUsuario;
   console.log(usuarioLogado);
 
@@ -43,4 +53,8 @@ function resetLogin() {
 
 function retornaCadastro() {
   window.location.href = "contanova.html";
+}
+
+function login() {
+  window.location.href = "recados.html";
 }

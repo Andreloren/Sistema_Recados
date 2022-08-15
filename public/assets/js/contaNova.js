@@ -58,7 +58,7 @@ function retornarLogin() {
     mensagemAlert("sucesso", "Voltando para Login");
     setTimeout(() => {
       window.location.href = "index.html";
-    }, 3000);
+    }, 2000);
   } else {
     resetCadastro();
   }
@@ -80,7 +80,7 @@ function mensagemAlert(type, mensagem) {
       msg.style.color = "green";
       setTimeout(() => {
         msg.style.display = "none";
-      }, 4000);
+      }, 2500);
       break;
     case "erro":
       msg.style.color = "red";
