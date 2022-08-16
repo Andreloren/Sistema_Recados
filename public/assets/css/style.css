@@ -187,3 +187,12 @@ section.principal h3 {
   border-top: 1px solid #8d9596;
   border-bottom: 1px solid #8d9596;
 }
+
+.red {
+  border: 3px solid #610606;
+  color: #610606;
+}
+.blue {
+  border: 3px solid #610606;
+  color: blue;
+}

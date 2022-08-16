@@ -16,6 +16,8 @@ if (!usuario) {
   sair();
 }
 
+listarRecados();
+
 let identidadeSistema = document.getElementById("userEmail");
 identidadeSistema.innerHTML = `${usuario.email}`;
 
@@ -39,6 +41,7 @@ function sair() {
 let botaoSalvar = document.getElementById("save");
 
 botaoSalvar.addEventListener("click", cadastrarMensagens);
+
 let descricaoHTML = document.getElementById("descricao");
 let detalhamentoHTML = document.getElementById("detalhamento");
 
@@ -47,8 +50,8 @@ function cadastrarMensagens() {
 
   let mensagemHTML = {
     idMsg,
-    Descrição: descricaoHTML.value,
-    Detalhamento: detalhamentoHTML.value,
+    descricao: descricaoHTML.value,
+    detalhamento: detalhamentoHTML.value,
   };
 
   usuario.mensagens.push(mensagemHTML);
@@ -60,8 +63,8 @@ function cadastrarMensagens() {
   localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
   atualizarUsuarios();
+  listarRecados();
   resetMensagem();
-  //listaTransacoes();
 }
 
 function atualizarUsuarios() {
@@ -77,4 +80,31 @@ function atualizarUsuarios() {
 function resetMensagem() {
   descricaoHTML.value = "";
   detalhamentoHTML.value = "";
+}
+
+function listarRecados() {
+  let listaRecados = document.getElementById("listaDeRecados");
+
+  for (const index in usuario.mensagens) {
+    listaRecados.innerHTML += `<tr id="${usuario.mensagens[index].idMsg}">
+    <th>${index}</th>
+    <th>${usuario.mensagens[index].descricao}</th>
+    <th>${usuario.mensagens[index].detalhamento}</th>
+    <th>
+    <button type="button" class="blue" onclick="editarMensagens(${usuario.mensagens[index].id})">Editar</button>
+    <button type="button" class="red" onclick="apagarMensagens(${usuario.mensagens[index].id})">Apagar</button>
+    </th>
+    </tr>`;
+
+    console.log(usuario.mensagens[index].idMsg);
+    console.log(usuario.mensagens[index].descricao);
+    console.log(usuario.mensagens[index].detalhamento);
+    console.log(index + 1);
+  }
+}
+function editarMensagens() {
+  alert("editou");
+}
+function apagarMensagens() {
+  alert("apagou");
 }
