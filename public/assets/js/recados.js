@@ -17,6 +17,15 @@ if (!usuario) {
   sair();
 }
 
+let identidadeSistema = document.getElementById("userEmail");
+identidadeSistema.innerHTML = `${usuario.email}`;
+
+let numero = 0;
+let emailUsuario = usuario.email;
+let senhaUsuario = usuario.senha;
+let idUsuario = usuario.identificador;
+let msgUsuario = usuario.mensagens;
+
 let botaoSair = document.getElementById("logout");
 
 botaoSair.addEventListener("click", () => {
@@ -27,9 +36,8 @@ botaoSair.addEventListener("click", () => {
 function sair() {
   return (window.location.href = "index.html");
 }
-// Ate aqui está pronto
 
-let botaoSalvar = document.getElementById("salvar");
+let botaoSalvar = document.getElementById("save");
 
 botaoSalvar.addEventListener("click", cadastrarMensagens);
 
@@ -37,16 +45,19 @@ function cadastrarMensagens() {
   let descricaoHTML = document.getElementById("descricao");
   let detalhamentoHTML = document.getElementById("detalhamento");
 
-  let mensagemHTML = [
-    {
-      Descrição: descricaoHTML.value,
-      Detalhamento: detalhamentoHTML.value,
-    },
-  ];
+  const idMsg = Math.floor(Math.random() * (100 - 10) + 10);
 
-  console.log(mensagemHTML);
+  let mensagemHTML = {
+    idMsg,
+    Descrição: descricaoHTML.value,
+    Detalhamento: detalhamentoHTML.value,
+  };
+
+  usuario.mensagens.push(mensagemHTML);
 
   console.log(usuario.mensagens);
   console.log(usuarios);
   console.log(usuario);
+
+  localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 }
