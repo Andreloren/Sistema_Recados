@@ -39,11 +39,10 @@ function sair() {
 let botaoSalvar = document.getElementById("save");
 
 botaoSalvar.addEventListener("click", cadastrarMensagens);
+let descricaoHTML = document.getElementById("descricao");
+let detalhamentoHTML = document.getElementById("detalhamento");
 
 function cadastrarMensagens() {
-  let descricaoHTML = document.getElementById("descricao");
-  let detalhamentoHTML = document.getElementById("detalhamento");
-
   const idMsg = Math.floor(Math.random() * (100 - 10) + 10);
 
   let mensagemHTML = {
@@ -61,6 +60,7 @@ function cadastrarMensagens() {
   localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
 
   atualizarUsuarios();
+  resetMensagem();
   //listaTransacoes();
 }
 
@@ -72,4 +72,9 @@ function atualizarUsuarios() {
     }
   });
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
+
+function resetMensagem() {
+  descricaoHTML.value = "";
+  detalhamentoHTML.value = "";
 }
