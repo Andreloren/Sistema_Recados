@@ -1,6 +1,5 @@
 let usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
 
-let usuarios = JSON.parse(localStorage.getItem("usuarios"));
 /*function salvarDadosStorage(dados){
     localStorage.setItem('usuarios', JSON.stringify(dados))
 }
@@ -56,8 +55,21 @@ function cadastrarMensagens() {
   usuario.mensagens.push(mensagemHTML);
 
   console.log(usuario.mensagens);
-  console.log(usuarios);
+
   console.log(usuario);
 
   localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+
+  atualizarUsuarios();
+  //listaTransacoes();
+}
+
+function atualizarUsuarios() {
+  let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+  usuarios.forEach((user) => {
+    if (user.email === usuario.email) {
+      user.mensagens = usuario.mensagens;
+    }
+  });
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
 }
