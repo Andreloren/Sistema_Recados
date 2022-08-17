@@ -4,7 +4,7 @@ let senhaCadastradaHTML = document.getElementById("novoSenhaUsuario");
 let confirmacaoSenhaHTML = document.getElementById("novoSenhaUsuarioRepeat");
 
 function cadastrarUsuarios() {
-  let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+  let usuarios = buscarDadosStorage();
 
   let email = emailHTML.value;
   let senha = senhaCadastradaHTML.value;
@@ -104,4 +104,11 @@ function mensagemAlert(type, mensagem) {
       }, 2000);
       break;
   }
+}
+
+function buscarDadosStorage() {
+  let dadosString = localStorage.getItem("usuarios");
+  let dadosTransformados = JSON.parse(dadosString);
+
+  return dadosTransformados;
 }

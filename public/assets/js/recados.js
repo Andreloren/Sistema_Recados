@@ -1,16 +1,15 @@
-let usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+let usuario = buscarDadosStorage();
 
 /*function salvarDadosStorage(dados){
     localStorage.setItem('usuarios', JSON.stringify(dados))
-}
-
-
-function buscarDadosStorage(){
-    let dadosString = localStorage.getItem('cadastros') || []
-    let dadosTransformados = JSON.parse(dadosString)
-    
-    return dadosTransformados  // pode ser assim =>  JSON.parse(localStorage.getItem('cadastros'))
 }*/
+
+function buscarDadosStorage() {
+  let dadosString = localStorage.getItem("usuarioLogado");
+  let dadosTransformados = JSON.parse(dadosString);
+
+  return dadosTransformados;
+}
 
 if (!usuario) {
   sair();
@@ -45,6 +44,10 @@ botaoSalvar.addEventListener("click", cadastrarMensagens);
 let descricaoHTML = document.getElementById("descricao");
 let detalhamentoHTML = document.getElementById("detalhamento");
 
+if (descricaoHTML === "" && detalhamentoHTML === "") {
+  console.log("Descrição e/ou Detalhamento em branco");
+}
+
 function cadastrarMensagens() {
   const idMsg = Math.floor(Math.random() * (100 - 10) + 10);
 
@@ -53,6 +56,11 @@ function cadastrarMensagens() {
     descricao: descricaoHTML.value,
     detalhamento: detalhamentoHTML.value,
   };
+
+  if (!descricaoHTML.value || !detalhamentoHTML) {
+    alert("Descrição ou Detalhamento em branco");
+    return;
+  }
 
   usuario.mensagens.push(mensagemHTML);
 
@@ -86,7 +94,7 @@ function listarRecados() {
   let listaRecados = document.getElementById("listaDeRecados");
 
   for (const index in usuario.mensagens) {
-    listaRecados.innerHTML += `<tr id="${usuario.mensagens[index].idMsg}">
+    listaRecados.innerHTML += `<tr id="${usuario.mensagens[index].idMsg}", class="registro">
     <th>${index}</th>
     <th>${usuario.mensagens[index].descricao}</th>
     <th>${usuario.mensagens[index].detalhamento}</th>
@@ -103,8 +111,10 @@ function listarRecados() {
   }
 }
 function editarMensagens() {
+  console.log();
   alert("editou");
 }
 function apagarMensagens() {
+  console.log();
   alert("apagou");
 }
