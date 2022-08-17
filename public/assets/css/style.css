@@ -189,10 +189,24 @@ section.principal h3 {
 }
 
 .red {
-  border: 3px solid #610606;
-  color: #610606;
+  margin-left: 5px;
+  margin-top: 5px;
+  border: none;
+  background-color: red;
+  color: white;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 11px;
 }
 .blue {
-  border: 3px solid blue;
-  color: blue;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #007a87;
+  cursor: pointer;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 11px;
 }

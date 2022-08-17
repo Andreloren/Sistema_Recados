@@ -1,9 +1,5 @@
 let usuario = buscarDadosStorage();
 
-/*function salvarDadosStorage(dados){
-    localStorage.setItem('usuarios', JSON.stringify(dados))
-}*/
-
 function buscarDadosStorage() {
   let dadosString = localStorage.getItem("usuarioLogado");
   let dadosTransformados = JSON.parse(dadosString);
@@ -65,10 +61,11 @@ function cadastrarMensagens() {
   usuario.mensagens.push(mensagemHTML);
 
   console.log(usuario.mensagens);
+  salvarDadosStorage(usuario);
 
-  console.log(usuario);
-
-  localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+  function salvarDadosStorage(usuario) {
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+  }
 
   atualizarUsuarios();
   listarRecados();
@@ -99,22 +96,23 @@ function listarRecados() {
     <th>${usuario.mensagens[index].descricao}</th>
     <th>${usuario.mensagens[index].detalhamento}</th>
     <th>
-    <button type="button" class="blue" onclick="editarMensagens(${usuario.mensagens[index].id})">Editar</button>
-    <button type="button" class="red" onclick="apagarMensagens(${usuario.mensagens[index].id})">Apagar</button>
+    <button type="button" class="blue" onclick="editarMensagens(${usuario.mensagens[index].idMsg})">Editar</button>
+    <button type="button" class="red" onclick="apagarMensagens(${usuario.mensagens[index].idMsg})">Apagar</button>
     </th>
     </tr>`;
 
     console.log(usuario.mensagens[index].idMsg);
     console.log(usuario.mensagens[index].descricao);
     console.log(usuario.mensagens[index].detalhamento);
-    console.log(index + 1);
+    console.log(index);
   }
 }
-function editarMensagens() {
+function editarMensagens(idMsg) {
   console.log();
   alert("editou");
 }
-function apagarMensagens() {
+function apagarMensagens(idMsg) {
   console.log();
   alert("apagou");
 }
+console.log(usuario);
