@@ -16,12 +16,6 @@ listarRecados();
 let identidadeSistema = document.getElementById("userEmail");
 identidadeSistema.innerHTML = `${usuario.email}`;
 
-let numero = 0;
-let emailUsuario = usuario.email;
-let senhaUsuario = usuario.senha;
-let idUsuario = usuario.identificador;
-let msgUsuario = usuario.mensagens;
-
 let botaoSair = document.getElementById("logout");
 
 botaoSair.addEventListener("click", () => {
@@ -46,7 +40,6 @@ if (descricaoHTML === "" && detalhamentoHTML === "") {
 
 function cadastrarMensagens() {
   const idMsg = Math.floor(Math.random() * (100 - 10) + 10);
-
   let mensagemHTML = {
     idMsg,
     descricao: descricaoHTML.value,
@@ -101,18 +94,36 @@ function listarRecados() {
     </th>
     </tr>`;
 
-    console.log(usuario.mensagens[index].idMsg);
+    console.log(usuario.mensagens[index].idMsg); //40
     console.log(usuario.mensagens[index].descricao);
     console.log(usuario.mensagens[index].detalhamento);
-    console.log(index);
   }
 }
 function editarMensagens(idMsg) {
   console.log();
   alert("editou");
 }
-function apagarMensagens(idMsg) {
-  console.log();
+function apagarMensagens(id) {
+  /*for (const idMsg in usuario.mensagens) {
+    if (idMsg === id) {
+      usuario.mensagens.splice(id);
+    }
+  }
+
+  for (const index of usuario.mensagens) {
+    if (index === id.lenght) {
+      usuario.mensagens.splice(usuario.mensagens.lenght);
+    }
+  }
+
+  salvarDadosStorage(usuario);
+
+  function salvarDadosStorage(usuario) {
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+  }
+  atualizarUsuarios();*/
+
   alert("apagou");
 }
 console.log(usuario);
+console.log(usuario.mensagens);
