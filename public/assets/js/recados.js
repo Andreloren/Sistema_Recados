@@ -82,6 +82,7 @@ function resetMensagem() {
 
 function listarRecados() {
   let listaRecados = document.getElementById("listaDeRecados");
+  listaRecados.innerHTML = "";
 
   for (const index in usuario.mensagens) {
     listaRecados.innerHTML += `<tr id="${usuario.mensagens[index].idMsg}", class="registro">
@@ -99,11 +100,28 @@ function listarRecados() {
     console.log(usuario.mensagens[index].detalhamento);
   }
 }
-function editarMensagens(idMsg) {
+
+function editarMensagens(indiceMensagem) {
   console.log();
   alert("editou");
 }
-function apagarMensagens(id) {
+function apagarMensagens(indiceMensagem) {
+  /*for (const index in usuario.mensagens) {
+    if (usuario.mensagens[index] === index) {
+      let indiceEncontrado = usuario.mensagens.findIndex(
+        (valor) => valor.index === index
+      );
+      usuario.mensagens.splice(indiceEncontrado, 1);
+    }
+    console.log(usuario.mensagens[index].idMsg);
+  }*/
+
+  /*usuario.mensagens.forEach((mensagem) => {
+    if (mensagem.idMsg === usuario.mensagens.idMsg) {
+      mensagem.idMsg.splice(usuario.mensagens, 1);
+    }
+  });*/
+
   /*for (const idMsg in usuario.mensagens) {
     if (idMsg === id) {
       usuario.mensagens.splice(id);
@@ -114,9 +132,9 @@ function apagarMensagens(id) {
     if (index === id.lenght) {
       usuario.mensagens.splice(usuario.mensagens.lenght);
     }
-  }
+  }*/
 
-  salvarDadosStorage(usuario);
+  /*salvarDadosStorage(usuario);
 
   function salvarDadosStorage(usuario) {
     localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
