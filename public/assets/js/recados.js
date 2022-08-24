@@ -47,7 +47,6 @@ function cadastrarMensagens() {
 
   usuario.mensagens.push(mensagemHTML);
 
-  console.log(usuario.mensagens);
   salvarDadosStorage(usuario);
 
   function salvarDadosStorage(usuario) {
@@ -88,14 +87,10 @@ function listarRecados() {
     <button type="button" class="red" onclick="apagarMensagens(${usuario.mensagens[index].idMsg})">Apagar</button>
     </th>
     </tr>`;
-
-    console.log(usuario.mensagens[index].idMsg); //40
-    console.log(usuario.mensagens[index].descricao);
-    console.log(usuario.mensagens[index].detalhamento);
   }
 }
 
-function editarMensagens(indiceMensagem) {
+function editarMensagens(idMsg) {
   console.log();
   alert("editou");
 }
