@@ -1,10 +1,8 @@
 let usuario = buscarDadosStorage();
 
-document.addEventListener("DOMContentLoaded", () => {
-  if (!usuario) {
-    sair();
-  }
-});
+if (!usuario) {
+  sair();
+}
 
 function buscarDadosStorage() {
   return JSON.parse(localStorage.getItem("usuarioLogado"));

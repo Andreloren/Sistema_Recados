@@ -3,9 +3,9 @@ let emailHTML = document.getElementById("emailCadastrado");
 let senhaCadastradaHTML = document.getElementById("novoSenhaUsuario");
 let confirmacaoSenhaHTML = document.getElementById("novoSenhaUsuarioRepeat");
 
-function cadastrarUsuarios() {
-  let usuarios = buscarDadosStorage();
+let usuarios = buscarDadosStorage();
 
+function cadastrarUsuarios() {
   let email = emailHTML.value;
   let senha = senhaCadastradaHTML.value;
   let repSenha = confirmacaoSenhaHTML.value;
