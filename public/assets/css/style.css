@@ -226,11 +226,11 @@ tr.tabela th {
 }
 
 .modal-div {
-  /*display: none;*/
+  display: none;
   position: absolute;
-  top: 60%;
+  top: 20%;
   left: 20%;
-  background-color: #a9b2b3;
+  background-color: #2298a5;
   border-radius: 10px;
   width: 50%;
 }
@@ -262,6 +262,7 @@ tr.tabela th {
 }
 
 legend {
+  font-weight: bolder;
   margin-left: 40%;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -290,6 +291,7 @@ legend {
 
 .control-label {
   position: absolute;
+  font-weight: 600;
   margin-left: 73%;
   margin-top: -28px;
 }
