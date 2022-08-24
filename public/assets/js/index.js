@@ -13,7 +13,7 @@ function logarUsuario() {
   console.log(senhaValidacao);
 
   if (!emailValidacao || !senhaValidacao) {
-    alert("erro. campos em branco");
+    alert("Favor digitar E-MAIL e SENHA cadastrados");
     resetLogin();
     return;
   }

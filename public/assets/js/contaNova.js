@@ -13,13 +13,12 @@ function cadastrarUsuarios() {
   let existe = usuarios.some((valor) => valor.email === email);
 
   if (existe) {
-    alert("Já existe esse e-mail cadastrado.");
-    resetCadastro();
+    mensagemAlert("atencao", "Já existe esse e-mail cadastrado.");
     return;
   }
 
   if (!senha || !repSenha) {
-    mensagemAlert("atencao", "Campos Vazios");
+    mensagemAlert("atencao", "Campo SENHA e/ou CONFIRMAÇÃO DE SENHA Vazios");
     return;
   }
 
@@ -98,7 +97,7 @@ function mensagemAlert(type, mensagem) {
       }, 2000);
       break;
     default:
-      msg.style.color = "yellow";
+      msg.style.color = "orange";
       setTimeout(() => {
         msg.style.display = "none";
       }, 2000);
