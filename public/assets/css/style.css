@@ -35,7 +35,7 @@
 
 #logout {
   position: absolute;
-  margin-left: 930px;
+  margin-left: 1000px;
   margin-top: -44px;
   border: none;
   background-color: red;
@@ -50,7 +50,7 @@
 
 #save {
   position: absolute;
-  margin-left: 1000px;
+  margin-left: 930px;
   margin-top: -44px;
   background-color: #007a87;
   cursor: pointer;
@@ -176,8 +176,7 @@ section.principal h3 {
   margin-left: 30px;
   margin-top: 32px;
   margin-bottom: 5px;
-  padding-left: 200px;
-  width: 200px;
+  width: 390px;
   padding-right: 20px;
   padding-bottom: 10px;
   padding-top: 10px;
