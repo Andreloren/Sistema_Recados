@@ -1,14 +1,13 @@
 let usuario = buscarDadosStorage();
 
+document.addEventListener("DOMContentLoaded", () => {
+  if (!usuario) {
+    sair();
+  }
+});
+
 function buscarDadosStorage() {
-  let dadosString = localStorage.getItem("usuarioLogado");
-  let dadosTransformados = JSON.parse(dadosString);
-
-  return dadosTransformados;
-}
-
-if (!usuario) {
-  sair();
+  return JSON.parse(localStorage.getItem("usuarioLogado"));
 }
 
 listarRecados();
