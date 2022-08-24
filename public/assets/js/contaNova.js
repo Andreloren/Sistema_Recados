@@ -10,6 +10,14 @@ function cadastrarUsuarios() {
   let senha = senhaCadastradaHTML.value;
   let repSenha = confirmacaoSenhaHTML.value;
 
+  let existe = usuarios.some((valor) => valor.email === email);
+
+  if (existe) {
+    alert("Já existe esse e-mail cadastrado.");
+    resetCadastro();
+    return;
+  }
+
   if (!senha || !repSenha) {
     mensagemAlert("atencao", "Campos Vazios");
     return;
@@ -22,14 +30,6 @@ function cadastrarUsuarios() {
   }
   if (senha.length < 5) {
     mensagemAlert("atencao", "Digite uma senha de no mínimo 5 caracteres");
-    return;
-  }
-
-  let existe = usuarios.some((valor) => valor.email === email);
-
-  if (existe) {
-    alert("Já existe esse e-mail cadastrado.");
-    resetCadastro();
     return;
   }
 
