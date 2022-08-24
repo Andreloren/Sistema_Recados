@@ -47,7 +47,7 @@ function cadastrarUsuarios() {
 
   console.log(usuarios);
 
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  salvarUsuarioStorage();
   retornarLogin();
 }
 
@@ -106,9 +106,10 @@ function mensagemAlert(type, mensagem) {
   }
 }
 
-function buscarDadosStorage() {
-  let dadosString = localStorage.getItem("usuarios");
-  let dadosTransformados = JSON.parse(dadosString);
+function salvarUsuarioStorage() {
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+}
 
-  return dadosTransformados;
+function buscarDadosStorage() {
+  return JSON.parse(localStorage.getItem("usuarios"));
 }
