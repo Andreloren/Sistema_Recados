@@ -28,7 +28,7 @@ function cadastrarUsuarios() {
   let existe = usuarios.some((valor) => valor.email === email);
 
   if (existe) {
-    alert("Já existe esse CPF cadastrado.");
+    alert("Já existe esse e-mail cadastrado.");
     resetCadastro();
     return;
   }
