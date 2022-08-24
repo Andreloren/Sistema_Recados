@@ -37,14 +37,13 @@ function logarUsuario() {
     }
   } else {
     login();
+    const usuarioLogado = validarUsuario;
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
+
     resetLogin();
   }
 
   console.log(validarUsuario);
-  const usuarioLogado = validarUsuario;
-  console.log(usuarioLogado);
-
-  localStorage.setItem("usuarioLogado", JSON.stringify(usuarioLogado));
 }
 
 function resetLogin() {
