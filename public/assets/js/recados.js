@@ -31,10 +31,6 @@ botaoSalvar.addEventListener("click", cadastrarMensagens);
 let descricaoHTML = document.getElementById("descricao");
 let detalhamentoHTML = document.getElementById("detalhamento");
 
-if (descricaoHTML === "" && detalhamentoHTML === "") {
-  console.log("Descrição e/ou Detalhamento em branco");
-}
-
 function cadastrarMensagens() {
   const idMsg = Math.floor(Math.random() * (100 - 10) + 10);
   let mensagemHTML = {
@@ -43,8 +39,9 @@ function cadastrarMensagens() {
     detalhamento: detalhamentoHTML.value,
   };
 
-  if (!descricaoHTML.value || !detalhamentoHTML) {
+  if (descricaoHTML.value === "" || detalhamentoHTML.value === "") {
     alert("Descrição ou Detalhamento em branco");
+    resetMensagem();
     return;
   }
 
