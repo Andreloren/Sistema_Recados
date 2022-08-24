@@ -99,43 +99,19 @@ function editarMensagens(indiceMensagem) {
   console.log();
   alert("editou");
 }
-function apagarMensagens(indiceMensagem) {
-  /*for (const index in usuario.mensagens) {
-    if (usuario.mensagens[index] === index) {
-      let indiceEncontrado = usuario.mensagens.findIndex(
-        (valor) => valor.index === index
-      );
-      usuario.mensagens.splice(indiceEncontrado, 1);
-    }
-    console.log(usuario.mensagens[index].idMsg);
-  }*/
-
-  /*usuario.mensagens.forEach((mensagem) => {
-    if (mensagem.idMsg === usuario.mensagens.idMsg) {
-      mensagem.idMsg.splice(usuario.mensagens, 1);
-    }
-  });*/
-
-  /*for (const idMsg in usuario.mensagens) {
-    if (idMsg === id) {
-      usuario.mensagens.splice(id);
-    }
-  }
-
-  for (const index of usuario.mensagens) {
-    if (index === id.lenght) {
-      usuario.mensagens.splice(usuario.mensagens.lenght);
-    }
-  }*/
-
-  /*salvarDadosStorage(usuario);
-
-  function salvarDadosStorage(usuario) {
+function apagarMensagens(idMsg) {
+  let confirmaApagar = confirm("Deseja realmente apagar esta mensagem?");
+  if (confirmaApagar) {
+    const novaMensagem = usuario.mensagens.filter(
+      (newMsg) => newMsg.idMsg !== idMsg
+    );
+    usuario.mensagens = novaMensagem;
     localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+    listarRecados();
+    atualizarUsuarios();
+    console.log(novaMensagem);
   }
-  atualizarUsuarios();*/
-
-  alert("apagou");
 }
+
 console.log(usuario);
 console.log(usuario.mensagens);
