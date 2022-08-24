@@ -220,18 +220,25 @@ tr.tabela th {
   font-size: 11px;
 }
 
+.telaInput {
+  position: relative;
+  margin: 18px auto;
+}
+
 .modal-div {
+  /*display: none;*/
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 20%;
-  background-color: rgb(192, 211, 26);
+  background-color: #a9b2b3;
   border-radius: 10px;
-  width: 40%;
+  width: 50%;
 }
 
 .blue-E {
-  margin-left: 30%;
+  margin-left: 40%;
   margin-top: 5px;
+  margin-bottom: 10px;
   background-color: #007a87;
   cursor: pointer;
   color: white;
@@ -244,6 +251,7 @@ tr.tabela th {
 .red-E {
   margin-left: 5px;
   margin-top: 5px;
+  margin-bottom: 10px;
   border: none;
   background-color: red;
   color: white;
@@ -251,4 +259,41 @@ tr.tabela th {
   cursor: pointer;
   border-radius: 5px;
   font-size: 11px;
+}
+
+legend {
+  margin-left: 40%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form-control {
+  display: block;
+  line-height: 2em;
+  margin: 0;
+  margin-left: 10px;
+  padding-left: 10px;
+  font-size: medium;
+  border: 1px solid #f4f4f4;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: 50;
+}
+
+.w-450 {
+  width: 30rem;
+  margin-bottom: 5px;
+}
+
+.control-label {
+  position: absolute;
+  margin-left: 73%;
+  margin-top: -28px;
+}
+
+.flex {
+  border: none;
 }
