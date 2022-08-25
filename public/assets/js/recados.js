@@ -90,10 +90,52 @@ function listarRecados() {
   }
 }
 
+let descricaoEditHTML = document.getElementById("descricaoOPEdit");
+let detalhamentoEditHTML = document.getElementById("detalhamentoOPEdit");
+
 function editarMensagens(idMsg) {
-  console.log();
-  alert("editou");
+  mostrarModal();
+
+  const cancel = document.getElementById("closeEdit");
+  cancel.addEventListener("click", esconderModal);
+
+  modalMostrarMensagens(idMsg);
+
+  const confirmarEdicao = document.getElementById("confirmEdit");
+  confirmarEdicao.onclick = () => {
+    modalEditarMensagens(idMsg);
+    listarRecados();
+    atualizarUsuarios();
+    setTimeout(() => {
+      esconderModal();
+    }, 500);
+  };
 }
+
+function mostrarModal() {
+  document.querySelector(".modal-div").style.display = "block";
+}
+
+function modalMostrarMensagens(idMsg) {
+  const mensagensTemp = usuario.mensagens.findIndex(
+    (mensagemEdit) => mensagemEdit.idMsg === idMsg
+  );
+  descricaoEditHTML.value = usuario.mensagens[mensagensTemp].descricao;
+  detalhamentoEditHTML.value = usuario.mensagens[mensagensTemp].detalhamento;
+}
+function modalEditarMensagens(idMsg) {
+  const mensagensTemp = usuario.mensagens.findIndex(
+    (mensagemEdit) => mensagemEdit.idMsg === idMsg
+  );
+  usuario.mensagens[mensagensTemp].descricao = descricaoEditHTML.value;
+  usuario.mensagens[mensagensTemp].detalhamento = detalhamentoEditHTML.value;
+  localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
+}
+
+function esconderModal() {
+  document.querySelector(".modal-div").style.display = "none";
+}
+
 function apagarMensagens(idMsg) {
   let confirmaApagar = confirm("Deseja realmente apagar esta mensagem?");
   if (confirmaApagar) {
@@ -104,9 +146,5 @@ function apagarMensagens(idMsg) {
     localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
     listarRecados();
     atualizarUsuarios();
-    console.log(novaMensagem);
   }
 }
-
-console.log(usuario);
-console.log(usuario.mensagens);
