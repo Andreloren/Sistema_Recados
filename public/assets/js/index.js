@@ -56,8 +56,8 @@ function retornaCadastro() {
 }
 
 function login() {
+  alert("Login Efetuado com Sucesso");
   setTimeout(() => {
-    alert("Login Efetuado com Sucesso");
-  }, 1500);
-  window.location.href = "recados.html";
+    window.location.href = "recados.html";
+  }, 1000);
 }

@@ -113,19 +113,19 @@ function editarMensagens(idMsg) {
 }
 
 function mostrarModal() {
-  document.querySelector(".modal-div").style.display = "block";
+  document.querySelector(".modal").style.display = "block";
 }
 
-function modalMostrarMensagens(idMsg) {
+function modalMostrarMensagens(id) {
   const mensagensTemp = usuario.mensagens.findIndex(
-    (mensagemEdit) => mensagemEdit.idMsg === idMsg
+    (mensagemEdit) => mensagemEdit.idMsg === id
   );
   descricaoEditHTML.value = usuario.mensagens[mensagensTemp].descricao;
   detalhamentoEditHTML.value = usuario.mensagens[mensagensTemp].detalhamento;
 }
-function modalEditarMensagens(idMsg) {
+function modalEditarMensagens(id) {
   const mensagensTemp = usuario.mensagens.findIndex(
-    (mensagemEdit) => mensagemEdit.idMsg === idMsg
+    (mensagemEdit) => mensagemEdit.idMsg === id
   );
   usuario.mensagens[mensagensTemp].descricao = descricaoEditHTML.value;
   usuario.mensagens[mensagensTemp].detalhamento = detalhamentoEditHTML.value;
@@ -133,14 +133,14 @@ function modalEditarMensagens(idMsg) {
 }
 
 function esconderModal() {
-  document.querySelector(".modal-div").style.display = "none";
+  document.querySelector(".modal").style.display = "none";
 }
 
-function apagarMensagens(idMsg) {
+function apagarMensagens(id) {
   let confirmaApagar = confirm("Deseja realmente apagar esta mensagem?");
   if (confirmaApagar) {
     const novaMensagem = usuario.mensagens.filter(
-      (newMsg) => newMsg.idMsg !== idMsg
+      (newMsg) => newMsg.idMsg !== id
     );
     usuario.mensagens = novaMensagem;
     localStorage.setItem("usuarioLogado", JSON.stringify(usuario));

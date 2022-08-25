@@ -53,40 +53,42 @@
           <tbody id="listaDeRecados"></tbody>
         </table>
       </section>
-      <div id="edit-mensagens" class="modal-div">
-        <form class="table">
-          <fieldset class="flex">
-            <legend>EDITAR MENSAGEM</legend>
-            <div class="inputPacote">
-              <input
-                type="text"
-                name="descricaoOPEdit"
-                id="descricaoOPEdit"
-                maxlength="50"
-                class="form-control w-450"
-              />
-              <label for="descricaoOPEdit" class="control-label"
-                >Descrição</label
-              >
-            </div>
-            <div class="inputPacote">
-              <input
-                type="text"
-                name="detalhamentoOPEdit"
-                id="detalhamentoOPEdit"
-                maxlength="50"
-                class="form-control w-450"
-              />
-              <label for="detalhamentoOPEdit" class="control-label"
-                >Detalhamento</label
-              >
-            </div>
-          </fieldset>
-          <button id="confirmEdit" type="button" class="blue-E">
-            Confirmar
-          </button>
-          <button id="closeEdit" type="button" class="red-E">Cancelar</button>
-        </form>
+      <div class="modal">
+        <div id="edit-mensagens" class="modal-div">
+          <form class="table">
+            <fieldset class="flex">
+              <legend>EDITAR MENSAGEM</legend>
+              <div class="inputPacote">
+                <input
+                  type="text"
+                  name="descricaoOPEdit"
+                  id="descricaoOPEdit"
+                  maxlength="50"
+                  class="form-control w-450"
+                />
+                <label for="descricaoOPEdit" class="control-label"
+                  >Descrição</label
+                >
+              </div>
+              <div class="inputPacote">
+                <input
+                  type="text"
+                  name="detalhamentoOPEdit"
+                  id="detalhamentoOPEdit"
+                  maxlength="50"
+                  class="form-control w-450"
+                />
+                <label for="detalhamentoOPEdit" class="control-label"
+                  >Detalhamento</label
+                >
+              </div>
+            </fieldset>
+            <button id="confirmEdit" type="button" class="blue-E">
+              Confirmar
+            </button>
+            <button id="closeEdit" type="button" class="red-E">Cancelar</button>
+          </form>
+        </div>
       </div>
     </main>
     <script src="assets/js/usuarioLocalStorage.js"></script>
