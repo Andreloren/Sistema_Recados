@@ -14,29 +14,20 @@ function cadastrarUsuarios() {
 
   if (existe) {
     Swal.fire("Já existe esse e-mail cadastrado");
-
-    //mensagemAlert("atencao", "Já existe esse e-mail cadastrado.");
     return;
   }
 
   if (!senha || !repSenha) {
     Swal.fire("Existem campos em branco");
-
-    //mensagemAlert("atencao", "Campo SENHA e/ou CONFIRMAÇÃO DE SENHA Vazios");
     return;
   }
 
   if (senha !== repSenha) {
     Swal.fire("Senhas não conferem!");
-
-    //mensagemAlert("erro", "Senhas não conferem!");
-
     return;
   }
   if (senha.length < 5) {
     Swal.fire("Digite uma senha de no mínimo 5 caracteres");
-
-    //mensagemAlert("atencao", "Digite uma senha de no mínimo 5 caracteres");
     return;
   }
 
@@ -49,10 +40,7 @@ function cadastrarUsuarios() {
     mensagens: [],
   };
 
-  console.log(criarUsuario);
   usuarios.push(criarUsuario);
-
-  console.log(usuarios);
 
   salvarUsuarioStorage();
   retornarLogin();
@@ -61,11 +49,8 @@ function cadastrarUsuarios() {
 
 formularioHTML.addEventListener("submit", (evento) => {
   evento.preventDefault();
-
-  console.log(emailHTML.value);
-  console.log(senhaCadastradaHTML.value);
-  console.log(confirmacaoSenhaHTML.value);
 });
+
 function retornarLogin() {
   let timerInterval;
   Swal.fire({
@@ -84,7 +69,6 @@ function retornarLogin() {
       clearInterval(timerInterval);
     },
   }).then((result) => {
-    /* Read more about handling dismissals below */
     if (result.dismiss === Swal.DismissReason.timer) {
       window.location.href = "index.html";
       console.log("I was closed by the timer");
@@ -109,7 +93,7 @@ function resetCadastro() {
   confirmacaoSenhaHTML.value = "";
 }
 
-function mensagemAlert(type, mensagem) {
+/*function mensagemAlert(type, mensagem) {
   let msg = document.getElementById("msgSucesso");
 
   msg.innerText = mensagem;
@@ -134,7 +118,7 @@ function mensagemAlert(type, mensagem) {
       }, 2000);
       break;
   }
-}
+}*/
 
 function salvarUsuarioStorage() {
   localStorage.setItem("usuarios", JSON.stringify(usuarios));

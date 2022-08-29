@@ -4,7 +4,6 @@ botaoLogin.addEventListener("click", logarUsuario);
 
 function logarUsuario() {
   let usuarioLogin = JSON.parse(localStorage.getItem("usuarios"));
-  console.log(usuarioLogin);
 
   let emailValidacao = document
     .getElementById("emailUsuario")
@@ -49,8 +48,6 @@ function logarUsuario() {
 
     resetLogin();
   }
-
-  console.log(validarUsuario);
 }
 
 function resetLogin() {
@@ -70,7 +67,6 @@ function login() {
     showConfirmButton: false,
     timer: 1500,
   });
-  //alert("Login Efetuado com Sucesso");
   setTimeout(() => {
     window.location.href = "recados.html";
   }, 2000);

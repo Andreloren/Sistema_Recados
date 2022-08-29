@@ -41,7 +41,6 @@ function cadastrarMensagens() {
 
   if (descricaoHTML.value === "" || detalhamentoHTML.value === "") {
     Swal.fire("Descrição ou Detalhamento em branco");
-    //alert("Descrição ou Detalhamento em branco");
     return;
   }
 
@@ -123,6 +122,7 @@ function modalMostrarMensagens(id) {
   descricaoEditHTML.value = usuario.mensagens[mensagensTemp].descricao;
   detalhamentoEditHTML.value = usuario.mensagens[mensagensTemp].detalhamento;
 }
+
 function modalEditarMensagens(id) {
   const mensagensTemp = usuario.mensagens.findIndex(
     (mensagemEdit) => mensagemEdit.idMsg === id
@@ -161,15 +161,4 @@ function apagarMensagens(id) {
       atualizarUsuarios();
     }
   });
-
-  /*let confirmaApagar = confirm("Deseja realmente apagar esta mensagem?");
-  if (confirmaApagar) {
-    const novaMensagem = usuario.mensagens.filter(
-      (newMsg) => newMsg.idMsg !== id
-    );
-    usuario.mensagens = novaMensagem;
-    localStorage.setItem("usuarioLogado", JSON.stringify(usuario));
-    listarRecados();
-    atualizarUsuarios();
-  }*/
 }
