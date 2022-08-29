@@ -22,6 +22,7 @@
                 name="descrição"
                 maxlength="50"
                 id="descricao"
+                placeholder="DESCRIÇÃO"
               />
             </label>
             <label for="detalhamento"
@@ -30,14 +31,19 @@
                 name="detalhamento"
                 id="detalhamento"
                 maxlength="50"
+                placeholder="DETALHAMENTO"
             /></label>
           </div>
         </form>
         <div>
-          <button id="save">Salvar</button>
+          <button id="save">
+            <i class="fa-solid fa-floppy-disk"> Salvar</i>
+          </button>
         </div>
         <div>
-          <button id="logout">Sair</button>
+          <button id="logout">
+            <i class="fa-solid fa-door-closed"> Sair</i>
+          </button>
         </div>
       </section>
       <section>
@@ -84,14 +90,21 @@
               </div>
             </fieldset>
             <button id="confirmEdit" type="button" class="blue-E">
-              Confirmar
+              <i class="fa-solid fa-floppy-disk"></i>
             </button>
-            <button id="closeEdit" type="button" class="red-E">Cancelar</button>
+            <button id="closeEdit" type="button" class="red-E">
+              <i class="fa-solid fa-ban"></i>
+            </button>
           </form>
         </div>
       </div>
     </main>
     <script src="assets/js/usuarioLocalStorage.js"></script>
     <script src="assets/js/recados.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/00cfd90e67.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

@@ -6,29 +6,37 @@ let confirmacaoSenhaHTML = document.getElementById("novoSenhaUsuarioRepeat");
 let usuarios = buscarDadosStorage();
 
 function cadastrarUsuarios() {
-  let email = emailHTML.value;
+  let email = emailHTML.value.toLowerCase();
   let senha = senhaCadastradaHTML.value;
   let repSenha = confirmacaoSenhaHTML.value;
 
   let existe = usuarios.some((valor) => valor.email === email);
 
   if (existe) {
-    mensagemAlert("atencao", "Já existe esse e-mail cadastrado.");
+    Swal.fire("Já existe esse e-mail cadastrado");
+
+    //mensagemAlert("atencao", "Já existe esse e-mail cadastrado.");
     return;
   }
 
   if (!senha || !repSenha) {
-    mensagemAlert("atencao", "Campo SENHA e/ou CONFIRMAÇÃO DE SENHA Vazios");
+    Swal.fire("Existem campos em branco");
+
+    //mensagemAlert("atencao", "Campo SENHA e/ou CONFIRMAÇÃO DE SENHA Vazios");
     return;
   }
 
   if (senha !== repSenha) {
-    mensagemAlert("erro", "Senhas não conferem!");
-    resetCadastro();
+    Swal.fire("Senhas não conferem!");
+
+    //mensagemAlert("erro", "Senhas não conferem!");
+
     return;
   }
   if (senha.length < 5) {
-    mensagemAlert("atencao", "Digite uma senha de no mínimo 5 caracteres");
+    Swal.fire("Digite uma senha de no mínimo 5 caracteres");
+
+    //mensagemAlert("atencao", "Digite uma senha de no mínimo 5 caracteres");
     return;
   }
 
@@ -48,6 +56,7 @@ function cadastrarUsuarios() {
 
   salvarUsuarioStorage();
   retornarLogin();
+  resetCadastro();
 }
 
 formularioHTML.addEventListener("submit", (evento) => {
@@ -58,9 +67,31 @@ formularioHTML.addEventListener("submit", (evento) => {
   console.log(confirmacaoSenhaHTML.value);
 });
 function retornarLogin() {
-  alert("Cadastro Realizado com sucesso");
+  let timerInterval;
+  Swal.fire({
+    title: "Cadastro Realizado com Sucesso!",
+    html: "Você será redirecionado a página de LOGIN em <b></b>.",
+    timer: 2000,
+    timerProgressBar: true,
+    didOpen: () => {
+      Swal.showLoading();
+      const b = Swal.getHtmlContainer().querySelector("b");
+      timerInterval = setInterval(() => {
+        b.textContent = Swal.getTimerLeft();
+      }, 100);
+    },
+    willClose: () => {
+      clearInterval(timerInterval);
+    },
+  }).then((result) => {
+    /* Read more about handling dismissals below */
+    if (result.dismiss === Swal.DismissReason.timer) {
+      window.location.href = "index.html";
+      console.log("I was closed by the timer");
+    }
+  });
 
-  let confirmacao = confirm("Deseja voltar a tela inicial?");
+  /*let confirmacao = confirm("Deseja voltar a tela inicial?");
   if (confirmacao) {
     resetCadastro();
     mensagemAlert("sucesso", "Voltando para Login");
@@ -69,7 +100,7 @@ function retornarLogin() {
     }, 2000);
   } else {
     resetCadastro();
-  }
+  }*/
 }
 
 function resetCadastro() {

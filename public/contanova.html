@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="sweetalert2.min.css" />
     <title>Criar Novo Acesso</title>
   </head>
   <body class="corpo">
     <aside class="barralateral">
       <img
         class="foto"
-        src="assets/images/PlanejamentoDiário.png"
+        src="assets/images/PlanejamentoDiario.png"
         alt="Tela Principal"
       />
     </aside>
@@ -38,7 +39,6 @@
                 name="novoSenhaUsuario"
                 id="novoSenhaUsuario"
                 placeholder="SENHA"
-                required
               />
             </label>
           </div>
@@ -49,23 +49,24 @@
                 name="novoSenhaUsuarioRepeat"
                 id="novoSenhaUsuarioRepeat"
                 placeholder="CONFIRME SUA SENHA"
-                required
               />
             </label>
           </div>
-          <input
-            id="salvar"
-            type="submit"
-            onclick="cadastrarUsuarios();"
-            value="  CADASTRAR NOVO USUÁRIO"
-          />
+          <button id="salvar" type="submit" onclick="cadastrarUsuarios();">
+            <i class="fa-solid fa-id-card"></i> NOVO USUÁRIO
+          </button>
         </form>
         <div class="botao2">
-          <a href="index.html">VOLTAR A PÁGINA INICIAL</a>
+          <a id="return" href="index.html">VOLTAR A PÁGINA INICIAL</a>
         </div>
       </section>
     </main>
     <script src="assets/js/usuarioLocalStorage.js"></script>
     <script src="assets/js/contaNova.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/00cfd90e67.js"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
